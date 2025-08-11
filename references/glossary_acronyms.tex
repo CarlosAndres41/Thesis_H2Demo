@@ -1,0 +1,31 @@
+% -------------------------------------------------------------------------------
+%               Listing of all Glossary and Acronym Entries 
+%                           use as shown below
+% -------------------------------------------------------------------------------
+
+% ==== EXEMPLARY ENTRY FOR SYMBOLS LIST =========================================
+\newglossary[slg]{symbolslist}{syi}{sbl}{List of Symbols}
+\newglossaryentry{symb:Pi} {
+    name=$\pi$,
+    description={Geometrical value},
+    type=symbolslist
+}
+
+% ==== EXEMPLARY ENTRY FOR ACRONYMS LIST ========================================
+% \newacronym{#label}{#acronym}{#long_form}
+
+% define new command for custom acronym entry with only two arguments
+% fabricates an easier way to use \newacronym 
+\newcommand{\acroX}[2]{\newacronym{#1}{#1}{#2}}
+% \acroX{CD}{Compact Disk}
+
+\newcommand{\acroY}[3]{\newacronym{#1}{#2}{#3}}
+% \acroY{CD}{cd}{Compact Disk}
+
+\newacronym{VRBD}{VRBD}{Violet-Red-Bile-Glucose-Agar}
+
+% ==== EXEMPLARY ENTRY FOR MAIN GLOSSARY ========================================
+\newglossaryentry{Biofouling} {
+    name=Biofouling,
+    description={Some description}
+}

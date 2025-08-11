@@ -1,0 +1,128 @@
+% preamble.tex - Thesis preamble (LuaLaTeX, English only)
+% This file is intended to be included via \input or \include in your main .tex document.
+
+% ---------------------------------------------------------------------
+% File Import Support
+% ---------------------------------------------------------------------
+\usepackage{import} % Enables relative path imports for modular document structure.
+
+% ---------------------------------------------------------------------
+% Language and Character Encoding
+% ---------------------------------------------------------------------
+\usepackage[english]{babel} % Set document language: English only.
+
+% ---------------------------------------------------------------------
+% Font Configuration — LuaLaTeX Only
+% ---------------------------------------------------------------------
+\usepackage{fontspec}  % Primary font package for LuaLaTeX.
+\setmainfont{Arial}    % Set main (serif) font to Arial
+\setsansfont{Arial}    % Set sans-serif font to Arial
+
+% ---------------------------------------------------------------------
+% Page Layout and Formatting
+% ---------------------------------------------------------------------
+\usepackage[automark,headsepline]{scrlayer-scrpage} % Header/footer management.
+\newcommand{\theBCOR}{15mm} % Binding correction for double-sided print layouts.
+\usepackage[
+    bindingoffset=\theBCOR,
+    bottom = 3.5cm,
+    left = 2.5cm,
+    right = 2.5cm
+]{geometry}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+
+% ---------------------------------------------------------------------
+% Content Presentation
+% ---------------------------------------------------------------------
+\usepackage{tikz}
+\usepackage{graphicx}
+\addtokomafont{disposition}{\rmfamily}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[stretch=10]{microtype}
+\usepackage{textcomp}
+\usepackage[
+    range-units=single,
+    range-phrase=-,
+    separate-uncertainty=true,
+    multi-part-units=repeat,
+    locale=EN
+]{siunitx}
+\usepackage{listings}
+\usepackage{enumitem}
+\setlist{nosep}
+\usepackage{todonotes}
+\setuptodonotes{inline, inlinepar}
+\reversemarginpar
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+% ---------------------------------------------------------------------
+% Utility Packages
+% ---------------------------------------------------------------------
+\usepackage{blindtext}
+\usepackage[hidelinks]{hyperref}
+
+% ---------------------------------------------------------------------
+% Glossary and Index
+% ---------------------------------------------------------------------
+\usepackage[acronym, nogroupskip]{glossaries}[=v4.49]
+\usepackage{xltabular}
+\input{references/glossary_acronyms}
+\makeglossaries
+
+% ---------------------------------------------------------------------
+% Bibliography Configuration
+% ---------------------------------------------------------------------
+\usepackage{csquotes}
+\usepackage[
+    style=ieee,
+    backend=biber,
+    bibencoding=ascii
+]{biblatex}
+\addbibresource{references/references.bib}
+
+% ---------------------------------------------------------------------
+% Paragraph style for English
+% ---------------------------------------------------------------------
+\setlength{\parskip}{0em}
+\setlength{\parindent}{2em}
+
+% ---------------------------------------------------------------------
+% Custom commands (add as needed)
+% ---------------------------------------------------------------------
+% ----------------------------------------------------------------------------
+% Defining variables for cover pages and declaration of independence
+% ----------------------------------------------------------------------------
+% Author
+\newcommand*{\thesisAuthor}{Carlos Andrés Castañeda López}
+\newcommand*{\matrikelnr}{5778510}
+
+% University
+\newcommand*{\uniEn}{University of Freiburg}
+\newcommand*{\uni}{Albert-Ludwigs-Universität Freiburg}
+\newcommand*{\institute}{INATECH - Insitute for Sustainable Systems Engineering}
+\newcommand*{\chair}{MSc. Sustainable Systems Engineering}
+
+% Thesis
+\newcommand*{\thesisType}{Master's Thesis}
+\newcommand*{\thesisTitle}{Direct Solar-To-Hydrogen Conversion}
+\newcommand*{\submitDate}{\today}
+\newcommand*{\editingTime}{June 23, 2025 - \today}
+
+% Examiners
+\newcommand*{\firstExaminer}{Prof. Dr. Stefan Glunz}
+\newcommand*{\firstExaminerDepartment}{INATECH - Institute for Sustainable Systems Engineering}
+\newcommand*{\firstExaminerChair}{Chair for Photovoltaic Energy Conversion}
+\newcommand*{\secondExaminer}{Prof. Dr. Oana Cojocaru-Mirédin}
+\newcommand*{\secondExaminerDepartment}{INATECH - Insitute for Sustainable Systems Engineering}
+\newcommand*{\secondExaminerChair}{Chair for Cross-scale Material Characterization}
+
+% Supervisor
+\newcommand*{\supervisor}{Dr. Frank Dimroth}
+\newcommand*{\supervisorDepartment}{Fraunhofer Institute for Solar Energy Systems ISE}
+\newcommand*{\supervisorChair}{Head of Department III-V Photovoltaics and Concentrator Technology, Division Photovoltaics}
+\newcommand*{\secondSupervisor}{Dr. Juan Francisco Martínez Sánchez}
+\newcommand*{\secondSupervisorDepartment}{Fraunhofer Institute for Solar Energy Systems ISE}

@@ -1,0 +1,66 @@
+
+% Main thesis file
+
+\documentclass[
+    twoside,
+    12pt,
+    numbers = noendperiod,
+    chapterprefix = true,
+    bibliography = totoc,
+    DIV=calc
+]{scrbook}
+
+\input{preamble}
+\input{cover}
+
+% -------------------------------------------------------------------------------
+% Thesis metadata (edit as needed)
+% -------------------------------------------------------------------------------
+
+\begin{document}
+\maketitle
+\declaration
+
+% -------------------------------------------------------------------------------
+% Abstract, Zusammenfassung, ToC, Lists
+% -------------------------------------------------------------------------------
+\pagenumbering{Roman}
+\input{chapters/abstract}
+\input{chapters/zusammenfassung}
+
+% Standard lists (figures, tables, acronyms)
+\listoffigures
+\listoftables
+\printglossary[type=acronym]
+
+% -------------------------------------------------------------------------------
+% Main Content
+% -------------------------------------------------------------------------------
+\cleardoublepage
+\pagenumbering{arabic}
+\input{chapters/introduction}
+\input{chapters/theory}
+\input{chapters/sota}
+\input{chapters/implementation}
+\input{chapters/experiment}
+\input{chapters/discussion}
+\input{chapters/summary}
+\input{chapters/conclusion}
+\input{chapters/outlook}
+\input{chapters/acknowledgments}
+
+% -------------------------------------------------------------------------------
+% Bibliography
+% -------------------------------------------------------------------------------
+% \addbibresource moved to preamble (see preamble.tex)
+\printbibliography[heading=bibintoc]
+
+% -------------------------------------------------------------------------------
+% Appendix and Glossary
+% -------------------------------------------------------------------------------
+\pagenumbering{Alph}
+\input{chapters/appendix}
+\printglossary[type=main]
+\glsaddallunused
+
+\end{document}
