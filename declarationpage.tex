@@ -1,0 +1,43 @@
+% Declaration page definition
+\newcommand{\declaration} {
+    \begin{titlepage}
+        \newgeometry{left=2.5cm+\theBCOR,right=2.5cm,top=2.5cm,bottom=2.5cm}
+        \begin{center}
+            \thispagestyle{plain}
+            \textbf{\integrityTitle}\\
+            \vskip 1.5cm
+            \begin{tabular}{p{3.5cm}p{10cm}}
+                \textbf{\authortitle}      & \thesisAuthor,                  \\
+                                           & \matriculationnmbr: \matrikelnr \\
+                                           &                                 \\
+                \textbf{\editingtimetitle} & \editingTime                    \\
+                                           &                                 \\
+                \textbf{\examinerstitle}   & \firstExaminer,                 \\
+                                           & \firstExaminerDepartment        \\
+                                           & \firstExaminerChair             \\
+                                           &                                 \\
+                \ifdefined \secondExaminer
+                                           & \secondExaminer,                \\
+                                           & \secondExaminerDepartment       \\
+                                           & \secondExaminerChair            \\
+                \else
+                                           &                                 \\
+                                           &                                 \\
+                \fi
+                                           &                                 \\
+                \textbf{\supervisorstitle} & \supervisor,                    \\
+                                           & \supervisorDepartment           \\
+                                           & \supervisorChair                \\
+                                           &                                 \\
+                \textbf{\declarationstitle} \declarationsbody
+                                           &                                 \\
+                                           &                                 \\
+                                           &
+            \end{tabular}
+            \parbox{0.8\textwidth} {
+                \par\noindent\makebox[5cm]{\hrulefill} \hfill\makebox[5cm]{\hrulefill}%
+                \par\noindent\makebox[5cm][l]{\placeDate} \hfill\makebox[5cm][l]{\signature}%
+            }
+        \end{center}
+    \end{titlepage}
+}
