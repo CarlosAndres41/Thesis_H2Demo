@@ -68,10 +68,12 @@
 % ---------------------------------------------------------------------
 % Glossary and Index
 % ---------------------------------------------------------------------
-\usepackage[acronym, nogroupskip]{glossaries}[=v4.49]
+% \usepackage[acronym, nogroupskip]{glossaries}[=v4.49]
+\usepackage{acro}
+\acsetup{first-style=long-short}
 \usepackage{xltabular}
-\input{references/glossary_acronyms}
-\makeglossaries
+\input{references/acronyms.tex}
+% \makeglossaries
 
 % ---------------------------------------------------------------------
 % Bibliography Configuration
@@ -82,7 +84,7 @@
     backend=biber,
     bibencoding=ascii
 ]{biblatex}
-\addbibresource{references/references.bib}
+\addbibresource{references/main.bib}
 
 % ---------------------------------------------------------------------
 % Paragraph style for English
